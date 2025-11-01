@@ -1,3 +1,10 @@
+const express = require("express");
+const app = express();
+
+// ✅ هذا السيرفر الصغير يخلي Render يعتبر الخدمة "نشطة" دائماً
+app.get("/", (req, res) => res.send("✅ Bot is alive and running!"));
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log(`🌐 Express server running on port ${PORT}`));
 
 const {
   Client,
@@ -184,6 +191,10 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.login(process.env.TOKEN);
+const token = process.env.TOKEN;
+if (!token) {
+  console.error("❌ لم يتم العثور على متغير البيئة 'TOKEN'. تأكد من إضافته في Render.");
+  process.exit(1);
+}
 
-
+client.login(token);
