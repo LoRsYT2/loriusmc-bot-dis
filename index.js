@@ -13,7 +13,7 @@ const {
 } = require('discord.js');
 
 const CONFIG = {
-  TOKEN: 'MTQzNDE3MjY0NzQ5ODg0MjI1Nw.G-ww92.Mt6XfjdbnUHq3zTLJHWSnmvT5prPZmHXqPVLBU',
+  TOKEN: 'MTQzNDE3MjY0NzQ5ODg0MjI1Nw.GLgHi9.3EPQpJxUGQFPxsqfHnIBmXV6JP31mp9MRy2GnA',
   GUILD_ID: '1392728471222091920',
   STAFF_ROLE_ID: '1392856632819712041',
   TICKET_PANEL_CHANNEL_ID: '1411070011992178818',
@@ -186,3 +186,4 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(process.env.TOKEN);
+
