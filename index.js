@@ -1,10 +1,3 @@
-const express = require("express");
-const app = express();
-
-// ✅ هذا السيرفر الصغير يخلي Render يعتبر الخدمة "نشطة" دائماً
-app.get("/", (req, res) => res.send("✅ Bot is alive and running!"));
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`🌐 Express server running on port ${PORT}`));
 
 const {
   Client,
@@ -20,6 +13,7 @@ const {
 } = require('discord.js');
 
 const CONFIG = {
+  TOKEN: 'MTQzNDE3MjY0NzQ5ODg0MjI1Nw.G-ww92.Mt6XfjdbnUHq3zTLJHWSnmvT5prPZmHXqPVLBU',
   GUILD_ID: '1392728471222091920',
   STAFF_ROLE_ID: '1392856632819712041',
   TICKET_PANEL_CHANNEL_ID: '1411070011992178818',
@@ -191,10 +185,4 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-const token = process.env.TOKEN;
-if (!token) {
-  console.error("❌ لم يتم العثور على متغير البيئة 'TOKEN'. تأكد من إضافته في Render.");
-  process.exit(1);
-}
-
-client.login(token);
+client.login(process.env.TOKEN);
