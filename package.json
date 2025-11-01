@@ -1,0 +1,15 @@
+{
+  "name": "loriusmc-bot-dis",
+  "version": "1.0.0",
+  "description": "LoriusMC Discord Ticket Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "LoriusMC",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.24.2"
+  }
+}
